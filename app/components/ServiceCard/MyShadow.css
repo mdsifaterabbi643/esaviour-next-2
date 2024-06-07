@@ -1,0 +1,11 @@
+.myShadowDiv {
+    box-shadow: 5px 5px 16px 0px rgba(64, 176, 253, 0.19);
+    -webkit-box-shadow: 5px 5px 16px 0px rgba(64, 176, 253, 0.19);
+    -moz-box-shadow: 5px 5px 16px 0px rgba(64, 176, 253, 0.19);
+  }
+  
+  .myBlogPlaceHolder ::placeholder {
+    color: #6c7173;
+    font-weight: bold;
+  }
+  

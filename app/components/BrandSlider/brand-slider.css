@@ -1,0 +1,30 @@
+.brand-slider-container {
+  overflow: hidden;
+}
+
+/* Animation styles for smooth sliding */
+.brand-slider-animation {
+  transition: transform 1500 ease-in-out;
+}
+
+.brand-slider {
+  /* Additional styles for the slider itself (optional) */
+  width: 100%; /* Ensure slider fills container width */
+  display: flex; /* Allow horizontal content arrangement */
+}
+
+.brand-slider h3 {
+  /* Styling for news subtitle text */
+  margin: 0; /* Remove default margins */
+  white-space: nowrap; /* Prevent text wrapping */
+  animation: marquee 1500 linear infinite; /* Text marquee effect */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%); /* Start from right side */
+  }
+  100% {
+    transform: translateX(-100%); /* Move to the left continuously */
+  }
+}

@@ -1,0 +1,19 @@
+.mySliderHover:hover div {
+  border: none;
+}
+.mySliderHover:hover div {
+  background: skyblue;
+  transition: all linear 0.3s;
+}
+.mySliderHover:hover div div p {
+  color: #fff;
+  transition: all linear 0.3s;
+}
+/* ================================== */
+.custom-dots > ul > li button {
+  background-color: red;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  border: none;
+}
