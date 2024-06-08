@@ -1,9 +1,9 @@
 //import ContactHero from "@/app/components/ContactHero/ContactHero";
+import ContactHero2 from "@/SSRcomponents/ContactHero2";
 import Layout from "./layout";
-import ContactFormAddress from "@/app/components/ContactFormAddress/ContactFormAddress";
-import Footer2 from "@/app/components/Footer2/Footer2";
-import ContactHero2 from "./SSRcomponents/ContactHero2";
 
+import Footer2 from "@/app/components/Footer2/Footer2";
+import ContactFormAddress from "@/app/components/ContactFormAddress/ContactFormAddress";
 
 export async function getServerSideProps(context) {
   const res = await fetch(process.env.NEXT_PUBLIC_HERO_GET, {
