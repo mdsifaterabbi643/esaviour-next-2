@@ -27,6 +27,7 @@ var settings = {
 
 const Footer1 = () => {
   const form = useRef();
+
   // const { emailData, setEmailData } = useEmailJS();
   const [isChecked, setIsChecked] = useState(false);
   const [localOrderData, setLocalOrderData] = useState({
@@ -189,28 +190,19 @@ const Footer1 = () => {
         autoplay={true} // Enables autoplay
         autoplaySpeed={3000} // Sets the autoplay speed in milliseconds (optional)
       >
-        {isClient ? (
-          data[0]?.footer1Upper?.map((item, index) => (
-            <div key={index} className="mb-[30px]">
-              <div className="card w-[90%] glass mx-auto rounded-none min-h-[100px] sm:min-h-[120px] xl:min-h-[200px]">
-                <Image
-                  src={imgSrc[index]}
-                  alt={imgAlt[index]}
-                  width="120"
-                  height="60"
-                  className="w-[80px] mx-auto xl:w-[150px] mt-[15px] xl:mt-[35px] xl:mx-auto sm:w-[100px] sm:mx-auto"
-                ></Image>
-              </div>
+        {data[0]?.footer1Upper?.map((item, index) => (
+          <div key={index} className="mb-[30px]">
+            <div className="card w-[90%] glass mx-auto rounded-none min-h-[100px] sm:min-h-[120px] xl:min-h-[200px]">
+              <Image
+                src={item.imgSrc}
+                alt={item.imgAlt}
+                width="120"
+                height="60"
+                className="w-[80px] mx-auto xl:w-[150px] mt-[15px] xl:mt-[35px] xl:mx-auto sm:w-[100px] sm:mx-auto"
+              ></Image>
             </div>
-          ))
-        ) : (
-          <div>
-            <span className="loading loading-bars loading-xs"></span>
-            <span className="loading loading-bars loading-sm"></span>
-            <span className="loading loading-bars loading-md"></span>
-            <span className="loading loading-bars loading-lg"></span>
           </div>
-        )}
+        ))}
       </Slider>
       {/* ========== only for extra small device ============= */}
       <div className="w-[95vw] sm:hidden mx-auto overflow-x-hidden">
@@ -429,7 +421,7 @@ const Footer1 = () => {
                   </div>
                 </div>
               </div>
-              {/* bg-[#eef7ff]  */}
+
               <div className="basis-1/1 mt-[0px] w-[80%] mx-auto xl:w-[90%]">
                 <div className="bg-[#eef7ff] relative top-[20px] left-[0px] h-[80px]">
                   <div className="bg-[#eef7ff] absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2">
@@ -449,13 +441,12 @@ const Footer1 = () => {
                       {isSubmitting || orderEmailStatus ? ( // Show notification only when isSubmitting or emailStatus is set
                         orderEmailStatus ? (
                           <p className="text-green-500 font-semibold">
-                            Hello Robert, your email was sent
-                            successfully!
+                            Hello Robert, your email was sent successfully!
                           </p>
                         ) : (
                           <p className="text-red-500 font-semibold">
-                            Hello Robert, there was an error
-                            sending your email. Please try again.
+                            Hello Robert, there was an error sending your email.
+                            Please try again.
                           </p>
                         )
                       ) : null}

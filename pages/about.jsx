@@ -19,14 +19,22 @@ export async function getServerSideProps(context) {
       revalidate: 30, // Revalidate data every 30 seconds
     },
   });
+
+  const res2 = await fetch(process.env.NEXT_PUBLIC_FOOTER_1, {
+    next: {
+      revalidate: 30, // Revalidate data every 30 seconds
+    },
+  });
+
   const data = await res.json();
+  const footer1 = await res2.json();
 
   return {
-    props: { data },
+    props: { data, footer1 },
   };
 }
 
-const About = ({ data }) => {
+const About = ({ data, footer1 }) => {
   //console.log("==== ", data[0]?.hero);
   //console.log("==== ", data[0]?.section1);
 
@@ -40,7 +48,7 @@ const About = ({ data }) => {
         <AboutSection_3 data={data} />
         <AboutSection_4 data={data} />
         <div className="w-[98vw] mx-auto overflow-x-hidden">
-          <AboutSection_5 />
+          <AboutSection_5 data={data} />
         </div>
         <div className="w-[98vw] mx-auto overflow-x-hidden">
           <AboutSection_6 data={data} />
@@ -56,7 +64,7 @@ const About = ({ data }) => {
         </div>
         <div className="w-[98vw] mx-auto overflow-hidden">
           <Footer1 />
-        </div>
+          </div>
         <div className="w-[98vw] mx-auto overflow-hidden">
           <Footer2 />
         </div>
