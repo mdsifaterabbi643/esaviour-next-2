@@ -1,14 +1,30 @@
-import ContactHero from "@/app/components/ContactHero/ContactHero";
+//import ContactHero from "@/app/components/ContactHero/ContactHero";
 import Layout from "./layout";
 import ContactFormAddress from "@/app/components/ContactFormAddress/ContactFormAddress";
 import Footer2 from "@/app/components/Footer2/Footer2";
+import ContactHero2 from "./SSRcomponents/ContactHero2";
 
-const Contact = () => {
+
+export async function getServerSideProps(context) {
+  const res = await fetch(process.env.NEXT_PUBLIC_HERO_GET, {
+    next: {
+      revalidate: 30, // Revalidate data every 30 seconds
+    },
+  });
+  const data = await res.json();
+
+  return {
+    props: { data },
+  };
+}
+
+const Contact = ({ data }) => {
   return (
     <div>
       <Layout>
         <div className="bg-white h-screen">
-          <ContactHero />
+          {/* <ContactHero /> */}
+          <ContactHero2 data={data} />
 
           <ContactFormAddress />
 
