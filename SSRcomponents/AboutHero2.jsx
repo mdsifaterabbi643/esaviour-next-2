@@ -1,4 +1,4 @@
-import GetQuoteAbout from "@/app/components/AboutComponents/getQuoteAbout";
+// import GetQuoteAbout from "@/app/components/AboutComponents/getQuoteAbout";
 import Image from "next/image";
 
 // email js service id: service_d2jkicu
@@ -104,15 +104,15 @@ const AboutHero2 = ({ data }) => {
           <div className="basis-1/1 hidden xl:block xl:w-[798px] xl:ml-[100px]">
             <div className="flex flex-row gap-3">
               <div className="basis-1/4 h-[100px] xl:text-end mt-[15px]">
-                {/* <button
+                <button
                   className="btn rounded-none xl:text-[12px] bg-black hover:bg-orange-500 cursor-pointer text-white relative xl:top-[30px] transition duration-300 ease-linear"
                   //   onClick={() =>
                   //     document.getElementById("getQuoteModalAbout").showModal()
                   //   }
                 >
                   Get Free Quote
-                </button> */}
-                <GetQuoteAbout />
+                </button>
+                {/* <GetQuoteAbout /> */}
               </div>
               <div className="basis-3/4 h-[100px] mt-[25px]">
                 <h3 className="relative xl:text-[15px] xl:top-[20px] dmsans500">
@@ -128,14 +128,14 @@ const AboutHero2 = ({ data }) => {
                 className="basis-1/4 bg-black text-white text-center hover:text-black hover:bg-orange-500 cursor-pointer relative
               top-0 left-0 transition duration-300 ease-linear"
               >
-                {/* <button
+                <button
                   className="btn border-none w-full rounded-none text-[12px] sm:text-[12px] xl:text-[12px] bg-black hover:bg-orange-500 cursor-pointer text-white relative xl:top-[30px] transition duration-300 ease-linear"
                   //   onClick={() =>
                   //     document.getElementById("getQuoteModalAbout").showModal()
                   //   }
                 >
                   Get Free Quote
-                </button> */}
+                </button>
               </div>
               <div className="basis-3/4">
                 <div>
