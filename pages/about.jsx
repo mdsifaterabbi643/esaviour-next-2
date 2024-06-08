@@ -28,30 +28,31 @@ export async function getServerSideProps(context) {
 
 const About = ({ data }) => {
   //console.log("==== ", data[0]?.hero);
+  //console.log("==== ", data[0]?.section1);
 
   return (
     <div>
       <Layout>
         {/* <AboutHero /> */}
         <AboutHero2 data={data} />
-        <AboutSection_1 />
-        <AboutSection_2 />
-        <AboutSection_3 />
-        <AboutSection_4 />
+        <AboutSection_1 data={data} />
+        <AboutSection_2 data={data} />
+        <AboutSection_3 data={data} />
+        <AboutSection_4 data={data} />
         <div className="w-[98vw] mx-auto overflow-x-hidden">
           <AboutSection_5 />
         </div>
         <div className="w-[98vw] mx-auto overflow-x-hidden">
-          <AboutSection_6 />
+          <AboutSection_6 data={data} />
         </div>
         <div className="mb-[50px] lg:mb-[50px] w-[98vw] mx-auto overflow-hidden">
-          <AboutSection_7 />
+          <AboutSection_7 data={data} />
         </div>
         <div className="mb-[50px] lg:mb-[50px] w-[98vw] mx-auto overflow-hidden">
-          <AboutSection_8 />
+          <AboutSection_8 data={data} />
         </div>
         <div className="mb-[50px] w-[98vw] mx-auto overflow-hidden">
-          <AboutFAQSection />
+          <AboutFAQSection data={data} />
         </div>
         <div className="w-[98vw] mx-auto overflow-hidden">
           <Footer1 />
